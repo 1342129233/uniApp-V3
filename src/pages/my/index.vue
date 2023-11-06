@@ -24,14 +24,14 @@ const orderTypes = [
         <view class="profile" :style="{ paddingTop: safeAreaInsets!.top + 'px' }">
             <!-- 情况1: 已登录 -->
             <view class="overview" v-if="memberStore.profile">
-                <navigator url="/pagesMember/profile/profile" hover-class="none">
+                <navigator url="/pagesMember/profile/index" hover-class="none">
                     <image class="avatar" :src="memberStore.profile.avatar" mode="aspectFill"></image>
                 </navigator>
                 <view class="meta">
                     <view class="nickname">
                         {{ memberStore.profile.nickname || memberStore.profile.account }}
                     </view>
-                    <navigator class="extra" url="/pagesMember/profile/profile" hover-class="none">
+                    <navigator class="extra" url="/pagesMember/profile/index" hover-class="none">
                         <text class="update">更新头像昵称</text>
                     </navigator>
                 </view>
@@ -44,7 +44,7 @@ const orderTypes = [
                     </image>
                 </navigator>
                 <view class="meta">
-                    <navigator url="/pages/login/login" hover-class="none" class="nickname">
+                    <navigator url="/pages/login/index" hover-class="none" class="nickname">
                         未登录
                     </navigator>
                     <view class="extra">
@@ -52,7 +52,7 @@ const orderTypes = [
                     </view>
                 </view>
             </view>
-            <navigator class="settings" url="/pagesMember/settings/settings" hover-class="none">
+            <navigator class="settings" url="/pagesMember/settings/index" hover-class="none">
                 设置
             </navigator>
         </view>

@@ -1,4 +1,16 @@
 {
+	// 组件自动导入
+	"easycom": {
+		// 是否开启自动扫描 @/components/$1/$1.vue 组件
+		"autoscan": true,
+		// 以正则方式自定义组件匹配规则
+		"custom": {
+			// uni-ui 规则如下配置 
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+			// 以 Xtx 开头的组件，在 components 目录中查找
+			"^Xtx(.*)": "@/components/Xtx$1.vue"
+		}
+	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",
@@ -84,16 +96,29 @@
 			}
 		]
 	},
-	// 组件自动导入
-	"easycom": {
-		// 是否开启自动扫描 @/components/$1/$1.vue 组件
-		"autoscan": true,
-		// 以正则方式自定义组件匹配规则
-		"custom": {
-			// uni-ui 规则如下配置 
-			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
-			// 以 Xtx 开头的组件，在 components 目录中查找
-			"^Xtx(.*)": "@/components/Xtx$1.vue"
+	// 分包加载规则
+	"subPackages": [
+		{
+			// 子包加载规则
+			"root": "pagesMember",
+			// 页面路径和窗口表现
+			"pages": [
+				{
+					"path": "settings/index",
+					"style": {
+						"navigationBarTitleText": "设置"
+					}
+				}
+			]
+		}
+	],
+	// 分包预下载规则
+	"preloadRule": {
+		"pages/my/index": {
+			"network": "all",
+			"packages": [
+				"pagesMember"
+			]
 		}
 	}
 }
