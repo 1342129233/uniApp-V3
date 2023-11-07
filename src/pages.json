@@ -33,6 +33,12 @@
 			}
 		},
 		{
+			"path": "pages/cart/index2",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
 			"path": "pages/my/index",
 			"style": {
 				"navigationBarTitleText": "我的"
@@ -53,7 +59,7 @@
 		{
 			"path": "pages/goods/index",
 			"style": {
-				"navigationBarTitleText": "详情模块"
+				"navigationBarTitleText": "商品详情"
 			}
 		}
 	],
