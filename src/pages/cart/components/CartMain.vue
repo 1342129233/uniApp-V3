@@ -106,7 +106,7 @@ const gotoPayment = () => {
         })
     }
     // 跳转到结算页
-    uni.navigateTo({ url: '/pagesOrder/create/create' })
+    uni.navigateTo({ url: '/pagesOrder/create/index' })
 }
 
 // 猜你喜欢
